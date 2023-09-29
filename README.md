@@ -35,8 +35,3 @@
 
 ## Фичи далее
    - после техники восстановления пропуск хода.
-
-
-E: User logic (entry, repo, controller), input, form
-
-R: component, render, bar button

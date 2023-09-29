@@ -4,7 +4,11 @@ import "./Bar.css";
 
 export class Bar extends Component {
   constructor({
+<<<<<<< HEAD
     tagName = 'div',
+=======
+    tagName = "div",
+>>>>>>> dev
     className,
     textContent,
     html,
@@ -14,4 +18,8 @@ export class Bar extends Component {
   }) {
     super({ tagName, className, textContent, html, children, event, ...attrs });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev

@@ -4,7 +4,11 @@ import "./Button.css";
 
 export class Button extends Component {
   constructor({
+<<<<<<< HEAD
     tagName = 'button',
+=======
+    tagName = "button",
+>>>>>>> dev
     className,
     textContent,
     html,
@@ -14,4 +18,8 @@ export class Button extends Component {
   }) {
     super({ tagName, className, textContent, html, children, event, ...attrs });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev
