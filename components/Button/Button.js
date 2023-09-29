@@ -9,6 +9,6 @@ export class Button extends Component {
     textContent,
     event,
   }) {
-    super({ tagName, className });
+    super({ tagName, className, textContent, event });
   }
 }
