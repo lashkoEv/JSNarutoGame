@@ -1,5 +1,4 @@
-import { User } from "../User/User";
-import { UserRepository } from "../UserRepository/UserRepository";
+import { User, UserRepository } from "../";
 
 export class UserController {
   #userRepository;

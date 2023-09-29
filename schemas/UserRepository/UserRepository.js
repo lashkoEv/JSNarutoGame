@@ -1,10 +1,10 @@
-import { User } from "../User/User";
+import { User } from "../";
 
 export class UserRepository {
   #users;
 
-  constructor({ users = [] }) {
-    this.#users = users;
+  constructor() {
+    this.#users = [];
   }
 
   // takes an object like {login, password}
