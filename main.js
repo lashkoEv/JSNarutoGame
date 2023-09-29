@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import './style.css'
-import { Component} from "./core/Component";
-import { render } from "./core/render";
-import { defineEvent } from "./utils/defineEvent";
-import { Button } from "./components/Button/Button";
-
-const app = document.querySelector('#app');
-
-
-render(btn,app)
-=======
 import { User, UserController, UserRepository } from "./schemas";
 import { Input } from "./components";
 import { render } from "./core/render";
@@ -32,4 +20,3 @@ const input = new Input({
 });
 
 render(app, input);
->>>>>>> dev
