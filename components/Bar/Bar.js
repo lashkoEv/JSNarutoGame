@@ -6,12 +6,8 @@ export class Bar extends Component {
   constructor({
     tagName = "div",
     className,
-    textContent,
-    html,
     children,
-    event,
-    ...attrs
   }) {
-    super({ tagName, className, textContent, html, children, event, ...attrs });
+    super({ tagName, className, children });
   }
 }

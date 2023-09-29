@@ -7,11 +7,8 @@ export class Button extends Component {
     tagName = "button",
     className,
     textContent,
-    html,
-    children,
     event,
-    ...attrs
   }) {
-    super({ tagName, className, textContent, html, children, event, ...attrs });
+    super({ tagName, className, textContent, event });
   }
 }
