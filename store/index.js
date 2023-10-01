@@ -1,3 +1,3 @@
-import { isAuthorized } from "./isAuthorized";
+import { userController } from "./init";
 
-export { isAuthorized };
+export { userController };

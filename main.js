@@ -9,8 +9,13 @@ import "./style.css";
 import { Form } from "./apps/Form/Form";
 
 const form = new Form({
+<<<<<<< HEAD
     isAuthorized: 'false',
 })
+=======
+  isAuthorized: "false",
+});
+>>>>>>> dev
 render(app, form)
 
 // const user = new User({ login: "q", password: "q" });
@@ -38,6 +43,7 @@ const userController = new UserController();
 // });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // render(app, input);
 // append(app, button);
 
@@ -59,3 +65,8 @@ button.addEventListener('click', (e)=>{
 render(app, input);
 append(app, button);
 >>>>>>> 864e0ab408da4f1a95176355ae529ecdff08a99b
+=======
+// render(app, input);
+// append(app, button);
+
+>>>>>>> dev
