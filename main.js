@@ -6,30 +6,51 @@ import { Button } from "./components/Button/Button";
 
 import "./variables.css";
 import "./style.css";
+import { Form } from "./apps/Form/Form";
 
-const user = new User({ login: "q", password: "q" });
-console.log(user);
+const form = new Form({
+    isAuthorized: 'false',
+})
+// render(app, form)
 
-const userRepository = new UserRepository();
-console.log(userRepository);
+// const user = new User({ login: "q", password: "q" });
+// console.log(user);
+
+// const userRepository = new UserRepository();
+// console.log(userRepository);
 
 const userController = new UserController();
-console.log(userController);
+// console.log(userController);
 
-userController.authorize({ login: "q", password: "q" });
-userController.register({ login: "q", password: "q" });
-userController.authorize({ login: "q", password: "q" });
+// userController.authorize({ login: "q", password: "q" });
+// userController.register({ login: "q", password: "q" });
+// userController.authorize({ login: "q", password: "q" });
 
-const input = new Input({
-  className: "",
-  children: [],
-  placeholder: "Login",
+// const input = new Input({
+//   className: "",
+//   children: [],
+//   placeholder: "Login",
+// });
+
+// const button = new Button({
+//   className: "btn",
+//   textContent: "Send",
+// });
+
+// render(app, input);
+// append(app, button);
+
+const button = document.getElementsByClassName('button')[0];
+
+const formLogin = document.getElementsByClassName("input")[0];
+const formPassword = document.getElementsByClassName("input")[1];
+// console.log(formLogin);
+// console.log(formPassword);
+
+button.addEventListener('click', (e)=>{
+    e.preventDefault();
+    userController.authorize({
+        login: formLogin.value, 
+        password: formPassword.value
+    });
 });
-
-const button = new Button({
-  className: "btn",
-  textContent: "Send",
-});
-
-render(app, input);
-append(app, button);
