@@ -1,9 +1,17 @@
-import { Component } from "../../core/Component";
+import { AdvancedComponent } from "../../core/Component";
 
 import "./Button.css";
 
-export class Button extends Component {
-  constructor({ tagName = "button", className, textContent, event }) {
-    super({ tagName, className });
+export class Button extends AdvancedComponent {
+  constructor({ className, children, textContent }) {
+    super({
+      tagName: "button",
+      className: ["button", className].join(" "),
+      children,
+    });
+
+    this.textContent = textContent;
+
+    return this;
   }
 }
