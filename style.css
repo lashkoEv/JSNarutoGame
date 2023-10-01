@@ -4,3 +4,29 @@
     box-sizing: border-box;
 }
 
+#app{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper{
+    width: 800px;
+    height: 500px;
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input, .pass-input{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.send-btn-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
