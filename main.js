@@ -4,8 +4,8 @@ import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 
-import "./style.css";
 import "./variables.css";
+import "./style.css";
 
 const user = new User({ login: "q", password: "q" });
 console.log(user);
@@ -15,6 +15,10 @@ console.log(userRepository);
 
 const userController = new UserController();
 console.log(userController);
+
+userController.authorize({ login: "q", password: "q" });
+userController.register({ login: "q", password: "q" });
+userController.authorize({ login: "q", password: "q" });
 
 const input = new Input({
   className: "",
