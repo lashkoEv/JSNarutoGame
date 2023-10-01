@@ -27,7 +27,7 @@ export class UserController {
       this.#userRepository.addUser({ login, password });
 
       this.#currentUser = this.#userRepository.getUser({ login, password });
-      
+
       // go to game
 
     } else {
@@ -39,6 +39,8 @@ export class UserController {
 
   // authorizes the user
   authorize({ login, password }) {
+    if(!this.validate({login, password})) return;
+
     const user = this.#checkUser({ login, password });
 
     if (user) {
@@ -53,10 +55,9 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
-    return true;
-
-    // const login = document.getElementsByClassName("input-login")[0].value;
-    // const password = document.getElementsByClassName("input-login")[0].value;
+    console.log(login);
+    console.log(password);
+    // return console.log('hello');;
 
 
   }

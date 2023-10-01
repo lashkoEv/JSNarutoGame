@@ -27,12 +27,13 @@ export class AdvancedComponent extends Component {
 
     isExisting(html) && this.insertAdjacentHTML(html.position, html.text);
 
-    if (!isExisting(events)) return this;
-
-    for (const event in events) {
-      this.addEventListener(event.type, event.action);
+    if (isExisting(events)) {
+      for (const event in events) {
+        this.addEventListener(event, events[event]);
+      }
     }
 
-    return element;
+    return this;
   }
 }
+
