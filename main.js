@@ -2,13 +2,6 @@ import { User, UserController, UserRepository } from "./schemas";
 import { Input } from "./components";
 import { render } from "./core/render";
 import { append } from "./core/append";
-<<<<<<< HEAD
-import { Form } from "./apps/Form";
-
-import "./style.css";
-import { Button } from "./components/Button/Button";
-
-=======
 import { Button } from "./components/Button/Button";
 
 import "./variables.css";
@@ -40,4 +33,3 @@ const button = new Button({
 
 render(app, input);
 append(app, button);
->>>>>>> origin/dev
