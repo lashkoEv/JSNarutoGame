@@ -1,12 +1,16 @@
-import { Component } from "../../core/Component";
+import { AdvancedComponent } from "../../core/Component";
 
-export class Input extends Component {
-  constructor({ tagName, className, children }) {
-    super({ tagName, className, children });
-    const element = document.createElement("input");
+import "./Input.css";
 
-    element.className = ["input", className].join("");
+export class Input extends AdvancedComponent {
+  constructor({ className, children, placeholder }) {
+    super({
+      tagName: "input",
+      className: ["input", className].join(""),
+      children,
+      placeholder,
+    });
 
-    return element;
+    return this;
   }
 }

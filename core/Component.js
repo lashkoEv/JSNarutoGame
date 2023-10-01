@@ -32,5 +32,7 @@ export class AdvancedComponent extends Component {
     for (const event in events) {
       this.addEventListener(event.type, event.action);
     }
+
+    return element;
   }
 }
