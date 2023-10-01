@@ -1,0 +1,9 @@
+:root {
+  --btn-color: #f2a30b;
+  --btn-color-light: #f3ac23;
+  --btn-color-dark: #d99209;
+
+  --btn-border-color: #795105;
+  --btn-border-color-light: #916106;
+  --btn-border-color-dark: #604104;
+}
