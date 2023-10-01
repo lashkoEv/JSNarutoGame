@@ -1,7 +1,7 @@
 import { AdvancedComponent } from "../../core/Component";
 import { Input, Button } from "../../components";
 
-import "./form.css";
+import "./Form.css";
 
 export class Form extends AdvancedComponent {
   // returns new Auth|Reg Form
@@ -20,7 +20,8 @@ export class Form extends AdvancedComponent {
         }),
 
         new Input({
-          placeholder: 'Login'
+          placeholder: 'Login',
+
           //placeholder will change in Auth|Reg
         }),
         
@@ -29,7 +30,12 @@ export class Form extends AdvancedComponent {
         }),
 
         new Button({
-          textContent: 'Send'
+          textContent: 'Send',
+          events : {
+            click: (e) => {
+              console.log('hey');
+            }
+          }
         }),
 
         new AdvancedComponent({

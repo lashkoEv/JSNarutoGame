@@ -11,7 +11,7 @@ import { Form } from "./apps/Form/Form";
 const form = new Form({
     isAuthorized: 'false',
 })
-// render(app, form)
+render(app, form)
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);
