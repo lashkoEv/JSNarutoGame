@@ -55,19 +55,13 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
-<<<<<<< HEAD
     const symbolsBeforeAT = login.slice(0,login.indexOf('@'))
     // if(login.slice(0,symbolsBeforeAT) < 1) login.style.background = 'red';
     // login.addEventListener('keyUp', (e)=>{
     //   console.log(login);
     // })
-=======
-    console.log(login);
-    console.log(password);
-    // return console.log('hello');;
 
 
->>>>>>> dev
   }
 
 

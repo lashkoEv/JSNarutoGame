@@ -9,13 +9,8 @@ import "./style.css";
 import { Form } from "./apps/Form/Form";
 
 const form = new Form({
-<<<<<<< HEAD
-    isAuthorized: 'false',
-})
-=======
   isAuthorized: "false",
 });
->>>>>>> dev
 render(app, form)
 
 // const user = new User({ login: "q", password: "q" });
@@ -42,8 +37,7 @@ const userController = new UserController();
 //   textContent: "Send",
 // });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 // render(app, input);
 // append(app, button);
 
