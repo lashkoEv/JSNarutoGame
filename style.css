@@ -22,11 +22,7 @@
   align-items: center;
 }
 
-<<<<<<< HEAD
-.link{
-=======
 .link {
->>>>>>> dev
   font-family: primary;
   color: white;
   text-shadow: 3px 0 0 black, 0 -3px 0 black, 0 3px 0 black, -3px 0 0 black;
@@ -37,21 +33,13 @@
   padding: 1rem;
 }
 
-<<<<<<< HEAD
-.link:hover{
-=======
 .link:hover {
->>>>>>> dev
   border-radius: 1rem;
   box-shadow: 0px 0px 30px 0px rgba(199, 140, 13, 0.4);
   background-color: rgba(199, 140, 13, 0.2);
 }
 
-<<<<<<< HEAD
-.title{
-=======
 .title {
->>>>>>> dev
   font-family: primary;
   color: white;
   text-shadow: 3px 0 0 black, 0 -3px 0 black, 0 3px 0 black, -3px 0 0 black;
@@ -60,8 +48,4 @@
   letter-spacing: 0.2rem;
   padding: 1.3rem;
   user-select: none;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> dev

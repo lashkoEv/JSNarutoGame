@@ -36,4 +36,3 @@ export class AdvancedComponent extends Component {
     return this;
   }
 }
-

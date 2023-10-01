@@ -37,30 +37,5 @@ const userController = new UserController();
 //   textContent: "Send",
 // });
 
-
 // render(app, input);
 // append(app, button);
-
-const button = document.getElementsByClassName('button')[0];
-
-const formLogin = document.getElementsByClassName("input")[0];
-const formPassword = document.getElementsByClassName("input")[1];
-// console.log(formLogin);
-// console.log(formPassword);
-
-button.addEventListener('click', (e)=>{
-    e.preventDefault();
-    userController.authorize({
-        login: formLogin.value, 
-        password: formPassword.value
-    });
-});
-=======
-render(app, input);
-append(app, button);
->>>>>>> 864e0ab408da4f1a95176355ae529ecdff08a99b
-=======
-// render(app, input);
-// append(app, button);
-
->>>>>>> dev

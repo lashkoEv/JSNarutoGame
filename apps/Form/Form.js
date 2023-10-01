@@ -35,10 +35,16 @@ export class Form extends AdvancedComponent {
       events: {
         click: (e) => {
           e.preventDefault();
-          userController.authorize({
+          const isValid = userController.authorize({
             login: loginInput.value,
             password: passwordInput.value,
           });
+
+          if(!isValid){
+            loginInput.classList.add('input-error'); 
+          } else{
+            loginInput.classList.remove('input-error'); 
+          }
         },
       },
     });
