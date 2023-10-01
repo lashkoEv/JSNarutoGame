@@ -4,9 +4,6 @@ import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 
-<<<<<<< HEAD
-console.log('dsadd');
-=======
 import "./variables.css";
 import "./style.css";
 
@@ -36,4 +33,3 @@ const button = new Button({
 
 render(app, input);
 append(app, button);
->>>>>>> 1837cb3ec3403663be3230a0287e4c58f8632207
