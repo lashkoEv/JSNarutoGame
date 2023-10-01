@@ -37,6 +37,7 @@ const userController = new UserController();
 //   textContent: "Send",
 // });
 
+<<<<<<< HEAD
 // render(app, input);
 // append(app, button);
 
@@ -54,3 +55,7 @@ button.addEventListener('click', (e)=>{
         password: formPassword.value
     });
 });
+=======
+render(app, input);
+append(app, button);
+>>>>>>> 864e0ab408da4f1a95176355ae529ecdff08a99b
