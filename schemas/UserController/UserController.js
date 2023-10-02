@@ -19,7 +19,7 @@ export class UserController {
 
   // registers a new user
   register({ login, password }) {
-    if(!this.validate({login, password})) return;
+    if(!this.validate({login, password})) return false;
 
     const user = this.#checkUser({ login, password });
 
@@ -27,18 +27,21 @@ export class UserController {
       this.#userRepository.addUser({ login, password });
 
       this.#currentUser = this.#userRepository.getUser({ login, password });
-      
+
       // go to game
 
     } else {
       alert("User Exists!");
 
       // change user`s data (login, pass)
+      return true;
     }
   }
 
   // authorizes the user
   authorize({ login, password }) {
+    if(!this.validate({login, password})) return false;
+
     const user = this.#checkUser({ login, password });
 
     if (user) {
@@ -49,17 +52,12 @@ export class UserController {
     }
 
     console.log(this.#currentUser);
+    return true;
   }
 
   validate({ login, password }) {
     // место этого код валидации!!!
-    return true;
-
-    // const login = document.getElementsByClassName("input-login")[0].value;
-    // const password = document.getElementsByClassName("input-login")[0].value;
-
-
+    const symbolsBeforeAT = login.slice(0,login.indexOf('@'))
+    
   }
-
-
 }

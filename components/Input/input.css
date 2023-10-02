@@ -46,3 +46,8 @@
   border-right: 4px solid var(--btn-border-color-dark);
   border-bottom: 5px solid var(--btn-border-color-dark);
 }
+
+.input-error{
+  box-shadow: -3px 0 0 0 rgb(196, 0, 0), 3px 0 0 0 rgb(196, 0, 0), 0 -3px 0 0 rgb(196, 0, 0),
+    0 3px 0 0 rgb(196, 0, 0);
+}
