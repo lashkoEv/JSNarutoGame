@@ -3,6 +3,7 @@ import { Input } from "./components";
 import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
+import { Form } from "./apps/Form/Form";
 
 import "./variables.css";
 import "./style.css";
@@ -33,3 +34,5 @@ const button = new Button({
 
 render(app, input);
 append(app, button);
+
+const form = new 

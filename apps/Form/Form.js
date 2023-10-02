@@ -12,7 +12,5 @@ export class Form extends AdvancedComponent {
       html,
       ...attrs});
 
-      this.id = 'form';
-      console.log(this);
   }
 }
