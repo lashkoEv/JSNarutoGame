@@ -4,10 +4,7 @@ import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
-<<<<<<< HEAD
-=======
 import { userController } from "./store";
->>>>>>> origin/dev
 
 import "./variables.css";
 import "./style.css";
@@ -28,8 +25,6 @@ render(app, form);
 
 // userController.authorize({ login: "q", password: "q" });
 // userController.authorize({ login: "q", password: "q" });
-<<<<<<< HEAD
-=======
 
 // const input = new Input({
 //   className: "",
@@ -44,4 +39,3 @@ render(app, form);
 
 // render(app, input);
 // append(app, button);
->>>>>>> origin/dev

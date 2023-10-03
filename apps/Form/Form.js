@@ -34,17 +34,6 @@ export class Form extends AdvancedComponent {
       events: {
         click: (e) => {
           e.preventDefault();
-<<<<<<< HEAD
-          const isValid = userController.authorize({
-            login: loginInput.value,
-            password: passwordInput.value,
-          });
-
-          if(!isValid){
-            loginInput.classList.add('input-error'); 
-          } else{
-            loginInput.classList.remove('input-error'); 
-=======
 
           let isValid;
 
@@ -69,7 +58,6 @@ export class Form extends AdvancedComponent {
             passwordInput.classList.add("input-error");
           } else {
             passwordInput.classList.remove("input-error");
->>>>>>> origin/dev
           }
         },
       },
