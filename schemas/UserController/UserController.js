@@ -57,7 +57,60 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
+<<<<<<< HEAD
     const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
     //check if email has spaces
+=======
+    let isValidLogin = false;
+    let isValidPass = false;
+    const keyboardsSymbols = ['!','@','#','$','%','^','&','*'];
+
+    const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
+    
+    if(symbolsBeforeAT.length > 0 && login.includes('.') && login.includes('@') && !login.includes(' ')){      
+      isValidLogin = true; 
+    }
+    
+    // console.log(isValidLogin);
+
+    if(password.length + 1 > 5 && password.length < 10){
+      let hasNum = false;
+      let hasSymbol = false;
+      let hasChar = false;
+
+      for(const passwordsChar of password){        
+        if(!isNaN(+passwordsChar)){
+          hasNum = true;
+        }
+
+        if(isNaN(+passwordsChar)){
+          for(const symbol of keyboardsSymbols){
+            console.log('[password]',passwordsChar);
+            console.log('[symbol]',symbol);
+            if(passwordsChar !== symbol){
+              hasChar = true;
+            }
+          }
+        }
+        
+        console.log('[haschar]',hasChar);
+
+        for(let i = 0; i < keyboardsSymbols.length; i++){  
+          if(hasSymbol) break;
+
+          if(passwordsChar === keyboardsSymbols[i]){
+            hasSymbol = true;
+            break;
+          }
+        }
+      }
+      
+      if(hasNum && hasChar && hasSymbol){
+        isValidPass = true;
+      }
+
+      console.log(isValidPass);
+    }
+>>>>>>> 57468406890ed66f80e3f81ce45d55d170d2b4ae
   }
 }
