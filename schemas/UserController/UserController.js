@@ -1,4 +1,9 @@
 import { User, UserRepository } from "../";
+import {
+  lowerCaseSymbols,
+  upperCaseSymbols,
+  specialSymbols,
+} from "../../utils";
 
 export class UserController {
   #userRepository;
@@ -17,29 +22,41 @@ export class UserController {
     return this.#userRepository.getUser({ login, password });
   }
 
+  #checkUserLogin(login) {
+    return this.#userRepository.getUserByLogin(login);
+  }
+
   // registers a new user
   register({ login, password }) {
-    if(!this.validate({login, password})) return;
+    const isValid = this.#validate({ login, password });
 
-    const user = this.#checkUser({ login, password });
+    if (!(isValid.isValidLogin && isValid.isValidPassword)) return isValid;
+
+    const user = this.#checkUserLogin(login);
 
     if (!user) {
       this.#userRepository.addUser({ login, password });
 
       this.#currentUser = this.#userRepository.getUser({ login, password });
 
-      // go to game
+      console.log(this.#userRepository);
+      console.log(this.#currentUser);
 
+      // go to game menu
     } else {
       alert("User Exists!");
 
-      // change user`s data (login, pass)
+      isValid.isValidLogin = false;
     }
+
+    return isValid;
   }
 
   // authorizes the user
   authorize({ login, password }) {
-    if(!this.validate({login, password})) return;
+    const isValid = this.#validate({ login, password });
+
+    if (!(isValid.isValidLogin && isValid.isValidPassword)) return isValid;
 
     const user = this.#checkUser({ login, password });
 
@@ -47,20 +64,95 @@ export class UserController {
       this.#currentUser = user;
 
       // go to game
+    } else {
+      alert("No user with such data was found!");
 
+      isValid.isValidLogin = false;
+      isValid.isValidPassword = false;
     }
 
+    console.log(this.#userRepository);
     console.log(this.#currentUser);
+
+    return isValid;
   }
 
-  validate({ login, password }) {
-    // место этого код валидации!!!
-    console.log(login);
-    console.log(password);
-    // return console.log('hello');;
-
-
+  #validate({ login, password }) {
+    return {
+      isValidLogin: this.#validateLogin(login),
+      isValidPassword: this.#validatePassword(password),
+    };
   }
 
+  #validateLogin(login) {
+    let isValidLogin = false;
 
+    const symbolsBeforeAT = login.slice(0, login.indexOf("@"));
+
+    if (
+      symbolsBeforeAT.length > 0 &&
+      login.includes(".") &&
+      login.includes("@") &&
+      !login.includes(" ")
+    ) {
+      isValidLogin = true;
+    }
+
+    console.log("isValidLogin", isValidLogin);
+
+    return isValidLogin;
+  }
+
+  #validatePassword(password) {
+    let isValidPass = false;
+
+    if (password.length + 1 > 5 && password.length < 15) {
+      let haveNum = false;
+
+      //CHECK IF PASS CONTAINS SYMBOLS
+      const haveSymbols = this.#checkAssignment(specialSymbols, password);
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveUpperCaseLetters = this.#checkAssignment(
+        upperCaseSymbols,
+        password
+      );
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveLowerCaseLetters = this.#checkAssignment(
+        lowerCaseSymbols,
+        password
+      );
+
+      //CHECK IF PASS CONTAINS NUMS
+      for (const passwordsChar of password) {
+        if (!isNaN(+passwordsChar)) {
+          haveNum = true;
+        }
+      }
+
+      if (
+        haveLowerCaseLetters &&
+        haveUpperCaseLetters &&
+        haveSymbols &&
+        haveNum
+      ) {
+        isValidPass = true;
+      }
+    }
+    
+    console.log("isValidPass", isValidPass);
+
+    return isValidPass;
+  }
+
+  #checkAssignment(arr, password) {
+    return (
+      arr.filter((symbol) => {
+        if (password.includes(symbol)) {
+          return symbol;
+        }
+      }).length > 0
+    );
+  }
 }

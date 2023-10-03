@@ -3,15 +3,16 @@ import { Input } from "./components";
 import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
+import { Form } from "./apps/Form/Form";
+import { userController } from "./store";
 
 import "./variables.css";
 import "./style.css";
-import { Form } from "./apps/Form/Form";
 
 const form = new Form({
-  isAuthorized: "false",
+  isRegistration: false,
 });
-render(app, form)
+render(app, form);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);
@@ -19,11 +20,10 @@ render(app, form)
 // const userRepository = new UserRepository();
 // console.log(userRepository);
 
-const userController = new UserController();
+// userController.register({ login: "q", password: "q" });
 // console.log(userController);
 
 // userController.authorize({ login: "q", password: "q" });
-// userController.register({ login: "q", password: "q" });
 // userController.authorize({ login: "q", password: "q" });
 
 // const input = new Input({
@@ -39,4 +39,3 @@ const userController = new UserController();
 
 // render(app, input);
 // append(app, button);
-

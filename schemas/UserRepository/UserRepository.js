@@ -15,6 +15,12 @@ export class UserRepository {
     });
   }
 
+  getUserByLogin(login) {
+    return this.#users.find((user) => {
+      if (user.login === login) return user;
+    });
+  }
+
   // takes an object like {login, password}
   // returns the newly created user.
   addUser({ login, password }) {
