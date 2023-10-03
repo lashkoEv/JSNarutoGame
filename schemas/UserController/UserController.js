@@ -1,4 +1,9 @@
 import { User, UserRepository } from "../";
+import {
+  lowerCaseSymbols,
+  upperCaseSymbols,
+  specialSymbols,
+} from "../../utils";
 
 export class UserController {
   #userRepository;
@@ -80,10 +85,74 @@ export class UserController {
   }
 
   #validateLogin(login) {
-    return true;
+    let isValidLogin = false;
+
+    const symbolsBeforeAT = login.slice(0, login.indexOf("@"));
+
+    if (
+      symbolsBeforeAT.length > 0 &&
+      login.includes(".") &&
+      login.includes("@") &&
+      !login.includes(" ")
+    ) {
+      isValidLogin = true;
+    }
+
+    console.log("isValidLogin", isValidLogin);
+
+    return isValidLogin;
   }
 
   #validatePassword(password) {
-    return true;
+    let isValidPass = false;
+
+    if (password.length + 1 > 5 && password.length < 15) {
+      let haveNum = false;
+
+      //CHECK IF PASS CONTAINS SYMBOLS
+      const haveSymbols = this.#checkAssignment(specialSymbols, password);
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveUpperCaseLetters = this.#checkAssignment(
+        upperCaseSymbols,
+        password
+      );
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveLowerCaseLetters = this.#checkAssignment(
+        lowerCaseSymbols,
+        password
+      );
+
+      //CHECK IF PASS CONTAINS NUMS
+      for (const passwordsChar of password) {
+        if (!isNaN(+passwordsChar)) {
+          haveNum = true;
+        }
+      }
+
+      if (
+        haveLowerCaseLetters &&
+        haveUpperCaseLetters &&
+        haveSymbols &&
+        haveNum
+      ) {
+        isValidPass = true;
+      }
+    }
+    
+    console.log("isValidPass", isValidPass);
+
+    return isValidPass;
+  }
+
+  #checkAssignment(arr, password) {
+    return (
+      arr.filter((symbol) => {
+        if (password.includes(symbol)) {
+          return symbol;
+        }
+      }).length > 0
+    );
   }
 }
