@@ -4,14 +4,18 @@ import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
+<<<<<<< HEAD
+=======
+import { userController } from "./store";
+>>>>>>> origin/dev
 
 import "./variables.css";
 import "./style.css";
 
 const form = new Form({
-  isAuthorized: "false",
+  isRegistration: false,
 });
-render(app, form)
+render(app, form);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);
@@ -19,9 +23,25 @@ render(app, form)
 // const userRepository = new UserRepository();
 // console.log(userRepository);
 
-const userController = new UserController();
+// userController.register({ login: "q", password: "q" });
 // console.log(userController);
 
 // userController.authorize({ login: "q", password: "q" });
-// userController.register({ login: "q", password: "q" });
 // userController.authorize({ login: "q", password: "q" });
+<<<<<<< HEAD
+=======
+
+// const input = new Input({
+//   className: "",
+//   children: [],
+//   placeholder: "Login",
+// });
+
+// const button = new Button({
+//   className: "btn",
+//   textContent: "Send",
+// });
+
+// render(app, input);
+// append(app, button);
+>>>>>>> origin/dev
