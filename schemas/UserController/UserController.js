@@ -57,7 +57,43 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
-    const symbolsBeforeAT = login.slice(0,login.indexOf('@'))
+    let isValidLogin = false;
+    let isValidPass = false;
+    const keyboardsSymbols = ['!','@','#','$','%','^','&','*'];
+
+    const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
     
+    if(symbolsBeforeAT.length > 0 && login.includes('.') && login.includes('@') && !login.includes(' ')){      
+      isValidLogin = true; 
+    }
+    
+    // console.log(isValidLogin);
+
+    if(password.length + 1 > 5 && password.length < 10){
+      let hasNum = false;
+      let hasSymbol = false;
+
+      for(const passwordsChar of password){
+        console.log(passwordsChar);
+        
+        if(!isNaN(+passwordsChar)){
+          hasNum = true;
+        }
+        
+        for(let i = 0; i < keyboardsSymbols.length; i++){  
+          console.log(i);
+
+          if(hasSymbol) break;
+
+          if(passwordsChar === keyboardsSymbols[i]){
+            console.log(keyboardsSymbols[i]);
+            hasSymbol = true;
+            break;
+          }
+        }
+      }
+      console.log('[symbol]', hasSymbol);
+      console.log('[num]', hasNum);
+    }
   }
 }

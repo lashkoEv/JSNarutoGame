@@ -21,8 +21,6 @@ export class Form extends AdvancedComponent {
       children,
     });
 
-<<<<<<< HEAD
-=======
     const loginInput = new Input({
       placeholder: "Login",
       //placeholder will change in Auth|Reg
@@ -70,6 +68,5 @@ export class Form extends AdvancedComponent {
         //textContent will change in Auth|Reg
       })
     );
->>>>>>> 526dc12d8892dd13b0dc6b42bc6355bca2cd7f6d
   }
 }
