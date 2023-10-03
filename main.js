@@ -10,9 +10,9 @@ import "./variables.css";
 import "./style.css";
 
 const form = new Form({
-  isAuthorized: "false",
+  isRegistration: false,
 });
-render(app, form)
+render(app, form);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);
@@ -20,7 +20,7 @@ render(app, form)
 // const userRepository = new UserRepository();
 // console.log(userRepository);
 
-userController.register({ login: "q", password: "q" });
+// userController.register({ login: "q", password: "q" });
 // console.log(userController);
 
 // userController.authorize({ login: "q", password: "q" });
@@ -39,4 +39,3 @@ userController.register({ login: "q", password: "q" });
 
 // render(app, input);
 // append(app, button);
-

@@ -1,13 +1,14 @@
 import { AdvancedComponent } from "../../core/Component";
 import { Input, Button } from "../../components";
 import { userController } from "../../store";
+import { render } from "../../core/render";
 
 import "./form.css";
 
+// returns new Auth|Reg Form
 export class Form extends AdvancedComponent {
-  // returns new Auth|Reg Form
   constructor({
-    isAuthorized = false,
+    isRegistration = false,
     tagName,
     className,
     children,
@@ -18,12 +19,10 @@ export class Form extends AdvancedComponent {
     super({
       tagName: "form",
       className: "form",
-      children,
     });
 
     const loginInput = new Input({
       placeholder: "Login",
-      //placeholder will change in Auth|Reg
     });
 
     const passwordInput = new Input({
@@ -36,10 +35,18 @@ export class Form extends AdvancedComponent {
         click: (e) => {
           e.preventDefault();
 
-          const isValid = userController.authorize({
+          let isValid;
+
+          const userData = {
             login: loginInput.value,
             password: passwordInput.value,
-          });
+          };
+
+          if (isRegistration) {
+            isValid = userController.register(userData);
+          } else {
+            isValid = userController.authorize(userData);
+          }
 
           if (!isValid.isValidLogin) {
             loginInput.classList.add("input-error");
@@ -54,27 +61,30 @@ export class Form extends AdvancedComponent {
           }
         },
       },
-      // will change in Auth|Reg
     });
 
-    this.append(
-      new AdvancedComponent({
-        tagName: "div",
-        className: "title",
-        textContent: "Authorization",
-        //textContent will change in Auth|Reg
-      }),
+    const title = new AdvancedComponent({
+      tagName: "div",
+      className: "title",
+      textContent: isRegistration ? "Registration" : "Authorization",
+    });
 
-      loginInput,
-      passwordInput,
-      button,
+    const linkForAnotherForm = new AdvancedComponent({
+      tagName: "a",
+      className: "link",
+      textContent: isRegistration
+        ? "Already have an account? Log in!"
+        : "Don't have an account? Register!",
+      events: {
+        click: () => {
+          const form = new Form({
+            isRegistration: !isRegistration,
+          });
+          render(app, form);
+        },
+      },
+    });
 
-      new AdvancedComponent({
-        tagName: "a",
-        className: "link",
-        textContent: "Don't have an account? Register!",
-        //textContent will change in Auth|Reg
-      })
-    );
+    this.append(title, loginInput, passwordInput, button, linkForAnotherForm);
   }
 }

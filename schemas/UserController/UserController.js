@@ -17,24 +17,31 @@ export class UserController {
     return this.#userRepository.getUser({ login, password });
   }
 
+  #checkUserLogin(login) {
+    return this.#userRepository.getUserByLogin(login);
+  }
+
   // registers a new user
   register({ login, password }) {
     const isValid = this.#validate({ login, password });
 
     if (!(isValid.isValidLogin && isValid.isValidPassword)) return isValid;
 
-    const user = this.#checkUser({ login, password });
+    const user = this.#checkUserLogin(login);
 
     if (!user) {
       this.#userRepository.addUser({ login, password });
 
       this.#currentUser = this.#userRepository.getUser({ login, password });
 
-      // go to game
+      console.log(this.#userRepository);
+      console.log(this.#currentUser);
+
+      // go to game menu
     } else {
       alert("User Exists!");
 
-      // change user`s data (login, pass)
+      isValid.isValidLogin = false;
     }
 
     return isValid;
@@ -52,19 +59,20 @@ export class UserController {
       this.#currentUser = user;
 
       // go to game
+    } else {
+      alert("No user with such data was found!");
+
+      isValid.isValidLogin = false;
+      isValid.isValidPassword = false;
     }
 
+    console.log(this.#userRepository);
     console.log(this.#currentUser);
 
     return isValid;
   }
 
   #validate({ login, password }) {
-    // место этого код валидации!!!
-    // console.log(login);
-    // console.log(password);
-    // return console.log('hello');;
-
     return {
       isValidLogin: this.#validateLogin(login),
       isValidPassword: this.#validatePassword(password),
@@ -72,10 +80,10 @@ export class UserController {
   }
 
   #validateLogin(login) {
-    return login === "q" ? true : false;
+    return true;
   }
 
   #validatePassword(password) {
-    return password === "q" ? true : false;
+    return true;
   }
 }
