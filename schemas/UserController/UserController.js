@@ -57,13 +57,11 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
-<<<<<<< HEAD
-    const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
-    //check if email has spaces
-=======
     let isValidLogin = false;
     let isValidPass = false;
     const keyboardsSymbols = ['!','@','#','$','%','^','&','*'];
+    const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
     
@@ -71,46 +69,40 @@ export class UserController {
       isValidLogin = true; 
     }
     
-    // console.log(isValidLogin);
+    console.log(isValidLogin);
 
-    if(password.length + 1 > 5 && password.length < 10){
-      let hasNum = false;
-      let hasSymbol = false;
-      let hasChar = false;
+    if(password.length + 1 > 5 && password.length < 15){
+      let haveNum = false;
 
+      //CHECK IF PASS CONTAINS SYMBOLS
+      const haveSymbols = this.#checkAssignment(keyboardsSymbols, password)
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveUpperCaseLetters = this.#checkAssignment(upperCase, password)
+
+      //CHECK IF PASS CONTAINS UPPERCASE LETTERS
+      const haveLowerCaseLetters = this.#checkAssignment(lowerCase, password)
+
+      //CHECK IF PASS CONTAINS NUMS
       for(const passwordsChar of password){        
         if(!isNaN(+passwordsChar)){
-          hasNum = true;
-        }
-
-        if(isNaN(+passwordsChar)){
-          for(const symbol of keyboardsSymbols){
-            console.log('[password]',passwordsChar);
-            console.log('[symbol]',symbol);
-            if(passwordsChar !== symbol){
-              hasChar = true;
-            }
-          }
-        }
-        
-        console.log('[haschar]',hasChar);
-
-        for(let i = 0; i < keyboardsSymbols.length; i++){  
-          if(hasSymbol) break;
-
-          if(passwordsChar === keyboardsSymbols[i]){
-            hasSymbol = true;
-            break;
-          }
+          haveNum = true;
         }
       }
       
-      if(hasNum && hasChar && hasSymbol){
+      if(haveLowerCaseLetters && haveUpperCaseLetters && haveSymbols && haveNum){
         isValidPass = true;
       }
 
       console.log(isValidPass);
     }
->>>>>>> 57468406890ed66f80e3f81ce45d55d170d2b4ae
+  }
+
+  #checkAssignment(arr, password){
+   return arr.filter((symbol)=>{
+      if(password.includes(symbol)){
+        return symbol;
+      }
+    }).length > 0;
   }
 }
