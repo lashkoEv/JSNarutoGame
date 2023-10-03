@@ -72,28 +72,40 @@ export class UserController {
     if(password.length + 1 > 5 && password.length < 10){
       let hasNum = false;
       let hasSymbol = false;
+      let hasChar = false;
 
-      for(const passwordsChar of password){
-        console.log(passwordsChar);
-        
+      for(const passwordsChar of password){        
         if(!isNaN(+passwordsChar)){
           hasNum = true;
         }
-        
-        for(let i = 0; i < keyboardsSymbols.length; i++){  
-          console.log(i);
 
+        if(isNaN(+passwordsChar)){
+          for(const symbol of keyboardsSymbols){
+            console.log('[password]',passwordsChar);
+            console.log('[symbol]',symbol);
+            if(passwordsChar !== symbol){
+              hasChar = true;
+            }
+          }
+        }
+        
+        console.log('[haschar]',hasChar);
+
+        for(let i = 0; i < keyboardsSymbols.length; i++){  
           if(hasSymbol) break;
 
           if(passwordsChar === keyboardsSymbols[i]){
-            console.log(keyboardsSymbols[i]);
             hasSymbol = true;
             break;
           }
         }
       }
-      console.log('[symbol]', hasSymbol);
-      console.log('[num]', hasNum);
+      
+      if(hasNum && hasChar && hasSymbol){
+        isValidPass = true;
+      }
+
+      console.log(isValidPass);
     }
   }
 }
