@@ -57,7 +57,7 @@ export class UserController {
 
   validate({ login, password }) {
     // место этого код валидации!!!
-    const symbolsBeforeAT = login.slice(0,login.indexOf('@'))
-    
+    const symbolsBeforeAT = login.slice(0,login.indexOf('@'));
+    //check if email has spaces
   }
 }
