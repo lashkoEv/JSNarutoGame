@@ -1,0 +1,13 @@
+.bar-wrapper {
+  border: 4px solid rgb(0, 0, 0);
+  width: 100%;
+  height: 24px;
+  background: rgba(100, 100, 100, 0.5);
+}
+
+.bar {
+  background: rgb(185, 51, 51);
+  width: 100%;
+  height: 100%;
+  animation: hp 0.8s ease;
+}

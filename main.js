@@ -5,9 +5,13 @@ import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
 import { userController } from "./store";
+import { Bar } from "./components/Bar/Bar";
 
 import "./variables.css";
 import "./style.css";
+
+// const bar = new Bar({});
+// render(app, bar);
 
 const form = new Form({
   isRegistration: false,

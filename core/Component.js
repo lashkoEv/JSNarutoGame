@@ -5,11 +5,9 @@ export class Component {
     const element = document.createElement(tagName);
     className && (element.className = className);
 
-    if (!children || isArray(children)) return element;
+    if (!children || !isArray(children)) return element;
 
-    for (const child of children) {
-      element.append(child);
-    }
+    element.append(...children);
 
     return element;
   }
@@ -36,4 +34,3 @@ export class AdvancedComponent extends Component {
     return this;
   }
 }
-
