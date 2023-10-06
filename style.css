@@ -9,11 +9,17 @@
   box-sizing: border-box;
 }
 
+#app,
+body {
+  overflow: hidden;
+}
+
 #app {
   background-image: url(/bg/pixel\ bg\ 2.gif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  filter: saturate(130%);
 
   height: 100vh;
 
