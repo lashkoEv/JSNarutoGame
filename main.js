@@ -1,18 +1,35 @@
+import { userController } from "./store";
 import { User, UserController, UserRepository } from "./schemas";
-import { Input } from "./components";
+import { ImageButton, Input } from "./components";
 import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
-import { userController } from "./store";
+import { Bar } from "./components/Bar/Bar";
+import { Menu, Scene } from "./apps";
 
 import "./variables.css";
 import "./style.css";
+import { Hero } from "./schemas/Hero/Hero";
+
+// const bar = new Bar({});
+// render(app, bar);
+
 
 const form = new Form({
-  isRegistration: false,
+  isRegistration: true,
 });
 render(app, form);
+
+// const hero = new Hero();
+// const scene = new Scene(hero);
+// render(app, scene.scene);
+
+// const gameMenu = new Menu({});
+// render(app, gameMenu);
+
+// const imgbtn = new ImageButton({ src: "/score/score.png" });
+// render(app, imgbtn);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);

@@ -3,7 +3,7 @@ import { Input, Button } from "../../components";
 import { userController } from "../../store";
 import { render } from "../../core/render";
 
-import "./form.css";
+import "./Form.css";
 
 // returns new Auth|Reg Form
 export class Form extends AdvancedComponent {
@@ -30,7 +30,7 @@ export class Form extends AdvancedComponent {
     });
 
     const button = new Button({
-      textContent: "Send",
+      textContent: isRegistration ? "Register" : "Log In",
       events: {
         click: (e) => {
           e.preventDefault();

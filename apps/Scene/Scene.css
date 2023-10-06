@@ -1,0 +1,70 @@
+.scene {
+  background-image: url(/bg/grass4.webp);
+  filter: saturate(80%);
+
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 7fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "hp . score"
+    "chakra . ."
+    "hero . enemy"
+    "ultimate skill recovery";
+
+  padding: 1rem;
+}
+
+.hp,
+.chakra,
+.score-wrapper {
+  font-family: primary;
+  color: white;
+  text-shadow: 3px 0 0 black, 0 -3px 0 black, 0 3px 0 black, -3px 0 0 black;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.score-img {
+  width: 2rem;
+  transform: translateY(8px);
+}
+
+.hp {
+  grid-area: hp;
+}
+
+.chakra {
+  grid-area: chakra;
+}
+
+.score-wrapper {
+  grid-area: score;
+  justify-self: end;
+  font-size: 1.7rem;
+}
+
+.ultimate {
+  grid-area: ultimate;
+  /* justify-self: start; */
+}
+
+.skill {
+  grid-area: skill;
+}
+
+.recovery {
+  grid-area: recovery;
+  /* justify-self: end; */
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.enemy {
+  grid-area: enemy;
+}
