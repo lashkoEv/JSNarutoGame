@@ -10,5 +10,6 @@
 }
 
 .active {
-  filter: drop-shadow(0 0 1rem rgb(1, 183, 255));
+  filter: drop-shadow(0 0 2rem rgb(0, 255, 255));
+  /* filter: saturate(150%); */
 }

@@ -1,4 +1,5 @@
 import { User, UserRepository } from "../";
+import { render } from "../../core/render";
 import {
   lowerCaseSymbols,
   upperCaseSymbols,
@@ -41,8 +42,6 @@ export class UserController {
 
       console.log(this.#userRepository);
       console.log(this.#currentUser);
-
-      // go to game menu
     } else {
       alert("User Exists!");
 
@@ -62,8 +61,6 @@ export class UserController {
 
     if (user) {
       this.#currentUser = user;
-
-      // go to game
     } else {
       alert("No user with such data was found!");
 
@@ -140,7 +137,7 @@ export class UserController {
         isValidPass = true;
       }
     }
-    
+
     console.log("isValidPass", isValidPass);
 
     return isValidPass;

@@ -37,6 +37,7 @@ body {
   letter-spacing: 0.2rem;
   cursor: pointer;
   padding: 1rem;
+  transition: .3s ease;
 }
 
 .link:hover {
