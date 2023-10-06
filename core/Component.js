@@ -38,8 +38,4 @@ export class AdvancedComponent extends Component {
 
     return this;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/dev
