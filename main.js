@@ -5,14 +5,18 @@ import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
 import { userController } from "./store";
+import { Menu } from "./apps/Menu/Menu";
 
 import "./variables.css";
 import "./style.css";
 
-const form = new Form({
-  isRegistration: false,
-});
-render(app, form);
+// const form = new Form({
+//   isRegistration: false,
+// });
+// render(app, form);
+
+const gameMenu = new Menu({});
+render(app, gameMenu);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);

@@ -1,9 +1,9 @@
-.game-menu {
+.description {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 5rem 12rem;
+    padding: 2rem 20rem;
     background-color: rgba(62, 63, 48, 0.2);
     backdrop-filter: blur(2px);
     gap: 2rem;
@@ -15,9 +15,5 @@
   
     box-shadow: -3px 0 0 0 black, 3px 0 0 0 black, 0 -3px 0 0 black,
       0 3px 0 0 black;
-}
-
-.new-game-btn, .load-game-btn, .description-btn, .exit-btn{
-    width: 250px;
-    cursor: pointer;
-}
+  }
+  
