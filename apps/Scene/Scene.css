@@ -49,7 +49,7 @@
 
 .ultimate {
   grid-area: ultimate;
-  justify-self: start;
+  /* justify-self: start; */
 }
 
 .skill {
@@ -58,7 +58,7 @@
 
 .recovery {
   grid-area: recovery;
-  justify-self: end;
+  /* justify-self: end; */
 }
 
 .hero {

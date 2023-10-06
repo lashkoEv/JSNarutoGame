@@ -15,13 +15,13 @@ import "./style.css";
 // render(app, bar);
 
 
-const form = new Form({
-  isRegistration: false,
-});
-render(app, form);
+// const form = new Form({
+//   isRegistration: false,
+// });
+// render(app, form);
 
-// const scene = new Scene({});
-// render(app, scene.scene);
+const scene = new Scene({});
+render(app, scene.scene);
 
 // const imgbtn = new ImageButton({ src: "/score/score.png" });
 // render(app, imgbtn);

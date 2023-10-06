@@ -50,15 +50,15 @@ export class Scene {
 
     this.#ultimate = new ImageButton({
       className: "ultimate",
-      src: "/score/score.png",
+      src: "/skills/ultimate3.png",
     });
     this.#skill = new ImageButton({
       className: "skill",
-      src: "/score/score.png",
+      src: "/skills/skill5.png",
     });
     this.#recovery = new ImageButton({
       className: "recovery",
-      src: "/score/score.png",
+      src: "/skills/recovery4.png",
     });
 
     this.#scene.append(

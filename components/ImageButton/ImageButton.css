@@ -5,11 +5,12 @@
 }
 
 .img {
-  width: 4rem;
+  height: 10rem;
   transition: 0.3s ease;
 }
 
-.active {
-  filter: drop-shadow(0 0 2rem rgb(0, 255, 255));
+.active, 
+.img-button:hover {
+  filter: drop-shadow(0 0 2.9rem rgb(0, 255, 255));
   /* filter: saturate(150%); */
 }
