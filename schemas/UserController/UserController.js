@@ -1,4 +1,5 @@
 import { User, UserRepository } from "../";
+import { Menu } from "../../apps";
 import { render } from "../../core/render";
 import {
   lowerCaseSymbols,
@@ -42,6 +43,9 @@ export class UserController {
 
       console.log(this.#userRepository);
       console.log(this.#currentUser);
+
+      const menu = new Menu({});
+      render(app, menu);
     } else {
       alert("User Exists!");
 
@@ -61,6 +65,9 @@ export class UserController {
 
     if (user) {
       this.#currentUser = user;
+      
+      const menu = new Menu({});
+      render(app, menu);
     } else {
       alert("No user with such data was found!");
 

@@ -30,7 +30,7 @@ export class Form extends AdvancedComponent {
     });
 
     const button = new Button({
-      textContent: "Send",
+      textContent: isRegistration ? "Register" : "Log In",
       events: {
         click: (e) => {
           e.preventDefault();

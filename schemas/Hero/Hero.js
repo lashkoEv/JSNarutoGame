@@ -1,6 +1,7 @@
-import { AdvancedComponent } from "../core/Component";
+import { AdvancedComponent } from "../../core/Component";
 
-export class Hero extends AdvancedComponent {
+import "./Hero.css";
+export class Hero {
   #BASE_DAMAGE = 15;
   #SKILL_DAMAGE = 40;
   #ULTIMATE_DAMAGE = 80;
@@ -16,11 +17,21 @@ export class Hero extends AdvancedComponent {
   #hp;
   #chakra;
   #isDead;
-  #component;
+  #element;
 
   constructor() {
-    // ......
-    // this.#component = new AdvancedComponent();
+    this.#hp = 100;
+    this.#chakra = 0;
+    this.#isDead = false;
+    this.#element = new AdvancedComponent({
+      tagName: "img",
+      className: "hero",
+      src: "/public/hero/naruto stand.gif",
+    });
+  }
+
+  get element() {
+    return this.#element;
   }
 
   attack() {

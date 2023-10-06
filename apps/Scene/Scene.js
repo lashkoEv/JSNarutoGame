@@ -11,7 +11,7 @@ export class Scene {
   #skill;
   #recovery;
 
-  constructor() {
+  constructor(hero, enemy) {
     this.#scene = new AdvancedComponent({
       tagName: "div",
       className: "scene",
@@ -65,6 +65,7 @@ export class Scene {
       this.#hpBar,
       scoreWrapper,
       this.#chakraBar,
+      hero.element,
       this.#ultimate,
       this.#skill,
       this.#recovery

@@ -6,22 +6,27 @@ import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
 import { Bar } from "./components/Bar/Bar";
-import { Scene } from "./apps";
+import { Menu, Scene } from "./apps";
 
 import "./variables.css";
 import "./style.css";
+import { Hero } from "./schemas/Hero/Hero";
 
 // const bar = new Bar({});
 // render(app, bar);
 
 
-// const form = new Form({
-//   isRegistration: false,
-// });
-// render(app, form);
+const form = new Form({
+  isRegistration: true,
+});
+render(app, form);
 
-const scene = new Scene({});
-render(app, scene.scene);
+// const hero = new Hero();
+// const scene = new Scene(hero);
+// render(app, scene.scene);
+
+// const gameMenu = new Menu({});
+// render(app, gameMenu);
 
 // const imgbtn = new ImageButton({ src: "/score/score.png" });
 // render(app, imgbtn);
