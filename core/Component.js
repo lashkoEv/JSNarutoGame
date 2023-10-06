@@ -3,6 +3,7 @@ import { isArray, isExisting } from "../utils";
 export class Component {
   constructor({ tagName = "div", className, children }) {
     const element = document.createElement(tagName);
+
     className && (element.className = className);
 
     if (!children || !isArray(children)) return element;
@@ -30,6 +31,10 @@ export class AdvancedComponent extends Component {
         this.addEventListener(event, events[event]);
       }
     }
+
+    if (!children || !isArray(children)) return this;
+
+    this.append(...children);
 
     return this;
   }

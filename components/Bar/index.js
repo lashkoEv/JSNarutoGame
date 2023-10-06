@@ -1,3 +1,3 @@
-import { Bar } from "./Button";
+import { Bar } from "./Bar";
 
 export { Bar };

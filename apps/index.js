@@ -1,6 +1,6 @@
 import { Form } from "./Form";
-import { Game } from "./Game";
+import { Scene } from "./Scene";
 // import { Description } from "./Description";
 import { Menu } from "./Menu";
 
-export { Form, Game,  Menu };
+export { Form, Scene, Menu };

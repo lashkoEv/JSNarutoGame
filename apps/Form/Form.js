@@ -3,7 +3,7 @@ import { Input, Button } from "../../components";
 import { userController } from "../../store";
 import { render } from "../../core/render";
 
-import "./form.css";
+import "./Form.css";
 
 // returns new Auth|Reg Form
 export class Form extends AdvancedComponent {

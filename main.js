@@ -1,11 +1,12 @@
 import { User, UserController, UserRepository } from "./schemas";
-import { Input } from "./components";
+import { ImageButton, Input } from "./components";
 import { render } from "./core/render";
 import { append } from "./core/append";
 import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
 import { userController } from "./store";
 import { Bar } from "./components/Bar/Bar";
+import { Scene } from "./apps";
 
 import "./variables.css";
 import "./style.css";
@@ -13,10 +14,16 @@ import "./style.css";
 // const bar = new Bar({});
 // render(app, bar);
 
-const form = new Form({
-  isRegistration: false,
-});
-render(app, form);
+// const form = new Form({
+//   isRegistration: false,
+// });
+// render(app, form);
+
+const scene = new Scene({});
+render(app, scene);
+
+// const imgbtn = new ImageButton({ src: "/score/score.png" });
+// render(app, imgbtn);
 
 // const user = new User({ login: "q", password: "q" });
 // console.log(user);
