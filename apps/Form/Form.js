@@ -4,7 +4,7 @@ import { userController } from "../../store";
 import { render } from "../../core/render";
 import { Menu } from "../Menu";
 
-import "./form.css";
+import "./Form.css";
 
 // returns new Auth|Reg Form
 export class Form extends AdvancedComponent {
@@ -31,7 +31,11 @@ export class Form extends AdvancedComponent {
     });
 
     const button = new Button({
+<<<<<<< HEAD
       textContent: isRegistration ? "Register" : "log in",
+=======
+      textContent: isRegistration ? "Register" : "Log In",
+>>>>>>> origin/dev
       events: {
         click: (e) => {
           e.preventDefault();
