@@ -3,7 +3,7 @@ import { Input, Button } from "../../components";
 import { render } from "../../core/render";
 import { Menu } from "../Menu";
 
-import "./description.css"
+import "./Description.css"
 
 export class Description extends AdvancedComponent {
   constructor({ tagName, className, children, events, html, ...attrs }) {

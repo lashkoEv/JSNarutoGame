@@ -31,7 +31,7 @@ export class Form extends AdvancedComponent {
     });
 
     const button = new Button({
-      textContent: isRegistration ? "Registr" : "log in",
+      textContent: isRegistration ? "Register" : "log in",
       events: {
         click: (e) => {
           e.preventDefault();
