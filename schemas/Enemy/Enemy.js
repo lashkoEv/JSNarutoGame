@@ -19,14 +19,6 @@ export class Enemy {
   #element;
 
   constructor() {
-<<<<<<< HEAD
-    this.#component = new AdvancedComponent();
-
-    this.#hp = 100;
-    this.#chakra = 0;
-    this.#isDead = false;
-    
-=======
     this.#hp = 100;
     this.#hpElement = new Bar({ className: "enemy-hp" });
 
@@ -52,7 +44,6 @@ export class Enemy {
 
   get element() {
     return this.#element;
->>>>>>> origin/dev
   }
 
   attack() {
