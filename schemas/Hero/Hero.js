@@ -30,6 +30,7 @@ export class Hero {
     this.#chakraElement = null;
 
     this.#isDead = false;
+
     this.#element = new AdvancedComponent({
       tagName: "img",
       className: "hero",
