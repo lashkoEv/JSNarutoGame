@@ -1,4 +1,4 @@
-import { userController } from "./store";
+import { userController, getForm } from "./store";
 import { User, UserController, UserRepository } from "./schemas";
 import { ImageButton, Input } from "./components";
 import { render } from "./core/render";
@@ -12,14 +12,11 @@ import "./variables.css";
 import "./style.css";
 import { Hero } from "./schemas/Hero/Hero";
 
+getForm(true);
+
 // const bar = new Bar({});
 // render(app, bar);
 
-
-const form = new Form({
-  isRegistration: true,
-});
-render(app, form);
 
 // const hero = new Hero();
 // const scene = new Scene(hero);

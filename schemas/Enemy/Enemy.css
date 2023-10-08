@@ -1,0 +1,19 @@
+.enemy-img {
+  height: 10rem;
+  margin-top: 1rem;
+  transform: scaleX(-1);
+}
+
+.enemy {
+  align-self: center;
+  justify-self: start;
+  transform: translateY(-3rem);
+}
+
+.enemy-chakra {
+  margin-top: 1rem;
+}
+
+.enemy-chakra > .bar-wrapper > .bar {
+  background: rgb(30, 172, 255);
+}

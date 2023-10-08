@@ -1,5 +1,5 @@
 .hero {
-    height: 10rem;
-    align-self: center;
-    justify-self: center;
+  height: 10rem;
+  align-self: center;
+  justify-self: end;
 }
