@@ -14,8 +14,12 @@ export class Hero extends AdvancedComponent {
   #component;
 
   constructor() {
-    // ......
-    // this.#component = new AdvancedComponent();
+    this.#component = new AdvancedComponent();
+
+    this.#hp = 100;
+    this.#chakra = 0;
+    this.#isDead = false;
+    
   }
 
   attack() {
