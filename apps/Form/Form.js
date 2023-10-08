@@ -2,7 +2,6 @@ import { AdvancedComponent } from "../../core/Component";
 import { Input, Button } from "../../components";
 import { getForm, userController } from "../../store";
 import { render } from "../../core/render";
-import { Menu } from "../Menu";
 
 import "./Form.css";
 

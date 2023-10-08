@@ -1,0 +1,53 @@
+/* -------------- INPUT --------------- */
+
+.input {
+  font-family: primary;
+  color: white;
+  text-shadow: 3px 0 0 black, 0 -3px 0 black, 0 3px 0 black, -3px 0 0 black;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+
+  padding: 0.5rem;
+
+  background-color: var(--btn-color);
+
+  border: none;
+  outline: none;
+  border-top: 1px var(--btn-color);
+  border-left: 1px var(--btn-color);
+  border-color: var(--btn-color);
+  border-right: 4px solid var(--btn-border-color);
+  border-bottom: 6px solid var(--btn-border-color);
+
+  box-shadow: -3px 0 0 0 black, 3px 0 0 0 black, 0 -3px 0 0 black,
+    0 3px 0 0 black;
+}
+
+.input::placeholder {
+  color: #e0a73a;
+  text-shadow: 3px 0 0 #886a31, 0 -3px 0 #886a31, 0 3px 0 #886a31,
+    -3px 0 0 #886a31;
+  text-transform: uppercase;
+}
+
+.input:hover {
+  background-color: var(--btn-color-light);
+
+  border-top: 1px var(--btn-color-light);
+  border-left: var(--btn-color-light);
+  border-color: var(--btn-color-light);
+  border-right: 4px solid var(--btn-border-color-light);
+  border-bottom: 6px solid var(--btn-border-color-light);
+}
+
+.input:active {
+  background-color: var(--btn-color-dark);
+
+  border-right: 4px solid var(--btn-border-color-dark);
+  border-bottom: 5px solid var(--btn-border-color-dark);
+}
+
+.input-error {
+  box-shadow: -3px 0 0 0 rgb(148, 9, 9), 3px 0 0 0 rgb(148, 9, 9),
+    0 -3px 0 0 rgb(148, 9, 9), 0 3px 0 0 rgb(148, 9, 9);
+}

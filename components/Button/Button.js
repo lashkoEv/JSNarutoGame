@@ -13,7 +13,6 @@ export class Button extends AdvancedComponent {
 
     this.textContent = textContent;
 
-
     return this;
   }
 }

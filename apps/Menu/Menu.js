@@ -59,4 +59,3 @@ export class Menu extends AdvancedComponent {
     this.append(title, newGameBtn, loadGameBtn, descriptionBtn, exitBtn);
   }
 }
-
