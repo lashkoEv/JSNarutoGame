@@ -4,11 +4,12 @@ import { Description } from "../Description";
 import { render } from "../../core/render";
 
 import "./Menu.css";
-import { Hero } from "../../schemas/Hero/Hero";
+import { Hero, Enemy } from "../../schemas";
 import { Scene } from "../Scene";
+import { getDescription, getGame } from "../../store";
 
 export class Menu extends AdvancedComponent {
-  constructor({ tagName, className, children, events, html, ...attrs }) {
+  constructor({ tagName, className, children, events, enemy, ...attrs }) {
     super({
       tagName: "div",
       className: "game-menu",
@@ -19,9 +20,7 @@ export class Menu extends AdvancedComponent {
       textContent: "new game",
       events: {
         click: () => {
-          const hero = new Hero();
-          const scene = new Scene(hero);
-          render(app, scene.scene);
+          getGame();
         },
       },
     });
@@ -36,8 +35,7 @@ export class Menu extends AdvancedComponent {
       textContent: "description",
       events: {
         click: () => {
-          const description = new Description({});
-          render(app, description);
+          getDescription();
         },
       },
     });

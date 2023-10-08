@@ -4,6 +4,7 @@ import { render } from "../../core/render";
 import { Menu } from "../Menu";
 
 import "./Description.css";
+import { getGame } from "../../store/getApps";
 
 export class Description extends AdvancedComponent {
   constructor({ tagName, className, children, events, html, ...attrs }) {
@@ -21,8 +22,7 @@ export class Description extends AdvancedComponent {
           textContent: "<-- Back",
           events: {
             click: () => {
-              const gameMenu = new Menu({});
-              render(app, gameMenu);
+              getGame();
             },
           },
         }),

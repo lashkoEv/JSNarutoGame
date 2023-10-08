@@ -1,8 +1,9 @@
 import { AdvancedComponent } from "../../core/Component";
 
 import "./Hero.css";
+
 export class Hero {
-  #BASE_DAMAGE = 15;
+  #BASE_DAMAGE = 5;
   #SKILL_DAMAGE = 40;
   #ULTIMATE_DAMAGE = 80;
 
@@ -16,18 +17,35 @@ export class Hero {
 
   #hp;
   #chakra;
+  #hpElement;
+  #chakraElement;
   #isDead;
   #element;
 
   constructor() {
     this.#hp = 100;
+    this.#hpElement = null;
+
     this.#chakra = 0;
+    this.#chakraElement = null;
+
     this.#isDead = false;
+
     this.#element = new AdvancedComponent({
       tagName: "img",
       className: "hero",
-      src: "/public/hero/naruto stand.gif",
+      src: "/hero/naruto stand.gif",
     });
+  }
+
+  set hpElement(hpElement) {
+    this.#hpElement = hpElement;
+    this.#resizeHpBar();
+  }
+
+  set chakraElement(chakraElement) {
+    this.#chakraElement = chakraElement;
+    this.#resizeChakraBar();
   }
 
   get element() {
@@ -35,7 +53,16 @@ export class Hero {
   }
 
   attack() {
-    // ......
+    this.#element.src = "/hero/naruto_attack.gif";
+    
+    setTimeout(() => {
+      this.#element.src = "/hero/naruto stand.gif";
+    }, 1000);
+
+    this.#chakra += this.#CHAKRA_RECOVERY;
+    this.#resizeChakraBar();
+
+    return this.#BASE_DAMAGE;
   }
 
   useSkill() {}
@@ -45,10 +72,19 @@ export class Hero {
   useRecoveryTechnique() {}
 
   takeDamage(damage) {
-    // ......
+    this.#hp -= damage;
+    this.#resizeHpBar();
   }
 
   #checkHP() {}
 
   die() {}
+
+  #resizeHpBar() {
+    this.#hpElement.setWidth(this.#hp);
+  }
+
+  #resizeChakraBar() {
+    this.#chakraElement.setWidth(this.#chakra);
+  }
 }

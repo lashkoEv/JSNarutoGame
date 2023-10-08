@@ -62,10 +62,11 @@ export class Scene {
     });
 
     this.#scene.append(
-      this.#hpBar,
+      this.#hpBar.bar,
       scoreWrapper,
-      this.#chakraBar,
+      this.#chakraBar.bar,
       hero.element,
+      enemy.element,
       this.#ultimate,
       this.#skill,
       this.#recovery

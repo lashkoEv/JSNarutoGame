@@ -1,6 +1,6 @@
 import { AdvancedComponent } from "../../core/Component";
 import { Input, Button } from "../../components";
-import { userController } from "../../store";
+import { getForm, userController } from "../../store";
 import { render } from "../../core/render";
 import { Menu } from "../Menu";
 
@@ -78,10 +78,7 @@ export class Form extends AdvancedComponent {
         : "Don't have an account? Register!",
       events: {
         click: () => {
-          const form = new Form({
-            isRegistration: !isRegistration,
-          });
-          render(app, form);
+          getForm(!isRegistration);
         },
       },
     });
