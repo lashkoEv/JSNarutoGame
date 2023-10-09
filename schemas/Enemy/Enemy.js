@@ -17,6 +17,7 @@ export class Enemy {
   #chakraElement;
   #isDead;
   #element;
+  #elementImg;
 
   constructor() {
     this.#hp = 100;
@@ -27,19 +28,24 @@ export class Enemy {
 
     this.#isDead = false;
 
+    this.#elementImg = new AdvancedComponent({
+      tagName: "img",
+      className: "enemy-img",
+      src: "/enemy/gaara stand.gif",
+    });
+
     this.#element = new AdvancedComponent({
       tagName: "div",
       className: "enemy",
       children: [
         this.#hpElement.bar,
         this.#chakraElement.bar,
-        new AdvancedComponent({
-          tagName: "img",
-          className: "enemy-img",
-          src: "/enemy/gaara stand.gif",
-        }),
+        this.#elementImg,
       ],
     });
+
+    this.#resizeHpBar();
+    this.#resizeChakraBar();
   }
 
   get element() {
@@ -47,14 +53,36 @@ export class Enemy {
   }
 
   attack() {
-    // ......
+    this.#elementImg.src = "/enemy/gaara_attack.gif";
+    
+    setTimeout(() => {
+      this.#elementImg.src = "/enemy/gaara stand.gif";
+    }, 1000);
+
+    this.#chakra += this.#CHAKRA_RECOVERY;
+    this.#resizeChakraBar();
+
+    return this.#BASE_DAMAGE;
   }
 
   useSkill() {}
 
-  takeDamage(damage) {}
+  takeDamage(damage) {
+    this.#hp -= damage;
+    this.#resizeHpBar();
+  }
 
   #checkHP() {}
 
   die() {}
+
+  #resizeHpBar() {
+    this.#hpElement.setWidth(this.#hp);
+  }
+
+  #resizeChakraBar() {
+    this.#chakraElement.setWidth(this.#chakra);
+  }
+
+  #generateName(){}
 }
