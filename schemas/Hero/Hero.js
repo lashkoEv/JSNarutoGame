@@ -65,7 +65,11 @@ export class Hero {
     return this.#BASE_DAMAGE;
   }
 
-  useSkill() {}
+  useSkill() {
+    // if(this.#chakra >= this.#SKILL_CHAKRA_COST) {
+      
+    // }
+  }
 
   useUltimate() {}
 
