@@ -21,7 +21,10 @@ export class Game {
   #initBaseAttack() {
     this.#enemy.element.onclick = () => {
       this.#enemy.takeDamage(this.#hero.attack());
-      this.#hero.takeDamage(this.#enemy.attack());
+
+      setTimeout(()=>{
+        this.#hero.takeDamage(this.#enemy.attack());
+      }, 1000);
     };
   }
 }

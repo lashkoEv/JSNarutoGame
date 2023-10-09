@@ -9,8 +9,8 @@
   transition: 0.3s ease;
 }
 
-.active, 
-.img-button:hover {
+.active 
+/* .img-button:hover */ {
   filter: drop-shadow(0 0 2.9rem rgb(0, 255, 255));
   /* filter: saturate(150%); */
 }
