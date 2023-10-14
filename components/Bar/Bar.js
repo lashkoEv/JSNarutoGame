@@ -32,7 +32,7 @@ export class Bar {
   }
 
   setWidth(width) {
-    if (width <= 100 && width >= 0) {
+    if (width <= 100) {
       this.#innerBar.style.width = `${width}%`;
     }
   }

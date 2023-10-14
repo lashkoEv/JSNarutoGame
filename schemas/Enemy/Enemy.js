@@ -4,7 +4,7 @@ import { AdvancedComponent } from "../../core/Component";
 import "./Enemy.css";
 
 export class Enemy {
-  #BASE_DAMAGE = 10;
+  #BASE_DAMAGE = 5;
   #SKILL_DAMAGE = 30;
 
   #CHAKRA_RECOVERY = 10;
@@ -84,5 +84,5 @@ export class Enemy {
     this.#chakraElement.setWidth(this.#chakra);
   }
 
-  #generateName(){}
+  #generateName() {}
 }

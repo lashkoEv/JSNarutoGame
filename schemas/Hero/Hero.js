@@ -54,7 +54,7 @@ export class Hero {
 
   attack() {
     this.#element.src = "/hero/naruto_attack.gif";
-    
+
     setTimeout(() => {
       this.#element.src = "/hero/naruto stand.gif";
     }, 1000);
@@ -66,14 +66,44 @@ export class Hero {
   }
 
   useSkill() {
-    // if(this.#chakra >= this.#SKILL_CHAKRA_COST) {
-      
-    // }
+    if (this.canUseSkill()) {
+      this.#element.src = "/hero/naruto_rasengan3.gif";
+
+      setTimeout(() => {
+        this.#element.src = "/hero/naruto stand.gif";
+      }, 3200);
+
+      this.#chakra -= this.#SKILL_CHAKRA_COST;
+      this.#resizeChakraBar();
+
+      return this.#SKILL_DAMAGE;
+    }
   }
 
-  useUltimate() {}
+  useUltimate() {
+    if (this.canUseUltimate()) {
+      this.#element.src = "/hero/naruto_ultimate.gif";
 
-  useRecoveryTechnique() {}
+      setTimeout(() => {
+        this.#element.src = "/hero/naruto stand.gif";
+      }, 2000);
+
+      this.#chakra -= this.#ULTIMATE_CHAKRA_COST;
+      this.#resizeChakraBar();
+
+      return this.#ULTIMATE_DAMAGE;
+    }
+  }
+
+  useRecoveryTechnique() {
+    if (this.canUseRecovery()) {
+      this.#chakra -= this.#TECHNIQUE_CHAKRA_COST;
+      this.#hp = 100;
+
+      this.#resizeChakraBar();
+      this.#resizeHpBar();
+    }
+  }
 
   takeDamage(damage) {
     this.#hp -= damage;
@@ -90,5 +120,17 @@ export class Hero {
 
   #resizeChakraBar() {
     this.#chakraElement.setWidth(this.#chakra);
+  }
+
+  canUseSkill() {
+    return this.#chakra >= this.#SKILL_CHAKRA_COST;
+  }
+
+  canUseRecovery() {
+    return this.#chakra >= this.#TECHNIQUE_CHAKRA_COST;
+  }
+
+  canUseUltimate() {
+    return this.#chakra >= this.#ULTIMATE_CHAKRA_COST;
   }
 }

@@ -13,7 +13,7 @@ import "./style.css";
 import { Hero } from "./schemas/Hero/Hero";
 
 getForm(true);
-
+console.log("Skill1@.");
 // const bar = new Bar({});
 // render(app, bar);
 
