@@ -133,4 +133,8 @@ export class Hero {
   canUseUltimate() {
     return this.#chakra >= this.#ULTIMATE_CHAKRA_COST;
   }
+
+  win() {
+    this.#chakra += this.#CHAKRA_FROM_DEAD_ENEMY;
+  }
 }
