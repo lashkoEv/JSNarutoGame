@@ -5,6 +5,7 @@ import {
   getDescription,
   renderScene,
   getGame,
+  getAlert
 } from "./getApps";
 
 export {
@@ -14,4 +15,5 @@ export {
   getDescription,
   renderScene,
   getGame,
+  getAlert
 };

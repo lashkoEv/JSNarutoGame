@@ -7,12 +7,16 @@ import { Button } from "./components/Button/Button";
 import { Form } from "./apps/Form/Form";
 import { Bar } from "./components/Bar/Bar";
 import { Menu, Scene } from "./apps";
+import { Alert } from "./components/ALert/Alert";
 
 import "./variables.css";
 import "./style.css";
 import { Hero } from "./schemas/Hero/Hero";
 
 getForm(true);
+
+// const a = new Alert({});
+// render(app, a)
 
 // const bar = new Bar({});
 // render(app, bar);

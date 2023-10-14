@@ -1,7 +1,7 @@
 import { User, UserRepository } from "../";
 import { Menu } from "../../apps";
 import { render } from "../../core/render";
-import { getMenu } from "../../store";
+import { getAlert, getMenu } from "../../store";
 import {
   lowerCaseSymbols,
   upperCaseSymbols,
@@ -65,7 +65,6 @@ export class UserController {
 
     if (user) {
       this.#currentUser = user;
-
       getMenu();
     } else {
       alert("No user with such data was found!");
@@ -91,9 +90,13 @@ export class UserController {
     let isValidLogin = false;
 
     const symbolsBeforeAT = login.slice(0, login.indexOf("@"));
+    const symbolsBeforeDot = login.slice(login.indexOf("@"), login.indexOf("."));
+    const symbolsAfterDot = login.slice(login.indexOf(".") + 1);
 
     if (
       symbolsBeforeAT.length > 0 &&
+      symbolsBeforeDot.length > 0 &&
+      symbolsAfterDot.length > 0 &&
       login.includes(".") &&
       login.includes("@") &&
       !login.includes(" ")
@@ -141,7 +144,7 @@ export class UserController {
         haveNum
       ) {
         isValidPass = true;
-      }
+      }else getAlert();
     }
 
     console.log("isValidPass", isValidPass);

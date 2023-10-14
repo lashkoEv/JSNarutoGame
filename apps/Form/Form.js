@@ -1,9 +1,11 @@
 import { AdvancedComponent } from "../../core/Component";
 import { Input, Button } from "../../components";
-import { getForm, userController } from "../../store";
+import { getForm, userController, getAlert } from "../../store";
 import { render } from "../../core/render";
 
 import "./Form.css";
+import { showAlertWithLoginError, showAlertWithPassError } from "../../utils/showAlert";
+import { append } from "../../core/append";
 
 // returns new Auth|Reg Form
 export class Form extends AdvancedComponent {
@@ -50,12 +52,14 @@ export class Form extends AdvancedComponent {
 
           if (!isValid.isValidLogin) {
             loginInput.classList.add("input-error");
+            append(app, showAlertWithLoginError());  
           } else {
             loginInput.classList.remove("input-error");
           }
 
           if (!isValid.isValidPassword) {
             passwordInput.classList.add("input-error");
+            append(app, showAlertWithPassError());
           } else {
             passwordInput.classList.remove("input-error");
           }

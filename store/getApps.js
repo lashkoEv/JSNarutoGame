@@ -1,4 +1,5 @@
 import { Form, Menu, Description } from "../apps";
+import { Alert } from "../components/ALert/Alert";
 import { render } from "../core/render";
 import { Game } from "../schemas";
 
@@ -26,3 +27,9 @@ export const renderScene = (scene) => {
 export const getGame = () => {
   const game = new Game();
 };
+
+export const getAlert = () =>{
+  // const alert = new Alert({});
+  return new Alert({});
+  // render(app, alert);
+}

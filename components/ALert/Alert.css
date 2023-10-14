@@ -1,0 +1,32 @@
+.alert-wrapper{
+    position: absolute;
+}
+
+.alert{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 12rem;
+    background-color: rgba(59, 59, 59, 0.2);
+    backdrop-filter: blur(2px);
+    gap: 5rem;
+    border-top: 1px var(--btn-color);
+    border-left: 1px var(--btn-color);
+    border-color: var(--btn-color);
+    border-right: 4px solid rgb(48, 35, 29);
+    border-bottom: 6px solid rgb(48, 35, 29);
+    transform: translateY(-15rem);
+  
+    box-shadow: -3px 0 0 0 black, 3px 0 0 0 black, 0 -3px 0 0 black,
+      0 3px 0 0 black;
+}
+
+.title-wrapper, .password-errors, .login-errors{
+    font-family: primary;
+    color: white;
+    text-shadow: 3px 0 0 black, 0 -3px 0 black, 0 3px 0 black, -3px 0 0 black;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
