@@ -5,10 +5,6 @@
 }
 
 .enemy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   align-self: center;
   justify-self: start;
   transform: translateY(-3rem);
