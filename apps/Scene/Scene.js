@@ -2,6 +2,7 @@ import { AdvancedComponent } from "../../core/Component";
 import { Bar, ImageButton } from "../../components";
 
 import "./Scene.css";
+import { changeBackground } from "../../utils";
 export class Scene {
   #scene;
   #hpBar;
@@ -12,6 +13,8 @@ export class Scene {
   #recovery;
 
   constructor(hero, enemy) {
+    changeBackground("/bg/pixel bg 6.gif");
+
     this.#scene = new AdvancedComponent({
       tagName: "div",
       className: "scene",
