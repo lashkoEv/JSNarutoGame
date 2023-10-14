@@ -7,6 +7,7 @@ import "./Menu.css";
 import { Hero, Enemy } from "../../schemas";
 import { Scene } from "../Scene";
 import { getDescription, getGame } from "../../store";
+import { changeBackground } from "../../utils";
 
 export class Menu extends AdvancedComponent {
   constructor({ tagName, className, children, events, enemy, ...attrs }) {
@@ -14,6 +15,9 @@ export class Menu extends AdvancedComponent {
       tagName: "div",
       className: "game-menu",
     });
+
+    
+    changeBackground("/bg/pixel bg 8.gif");
 
     const newGameBtn = new Button({
       className: "new-game-btn",

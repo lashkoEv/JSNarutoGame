@@ -4,6 +4,7 @@ import { getForm, userController } from "../../store";
 import { render } from "../../core/render";
 
 import "./Form.css";
+import { changeBackground } from "../../utils";
 
 // returns new Auth|Reg Form
 export class Form extends AdvancedComponent {

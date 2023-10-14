@@ -5,6 +5,7 @@ import { Menu } from "../Menu";
 
 import "./Description.css";
 import { getGame } from "../../store/getApps";
+import { changeBackground } from "../../utils";
 
 export class Description extends AdvancedComponent {
   constructor({ tagName, className, children, events, html, ...attrs }) {
@@ -13,6 +14,8 @@ export class Description extends AdvancedComponent {
       className: "description",
     });
 
+    changeBackground("/bg/grass6.webp");
+    
     const titleWrapper = new AdvancedComponent({
       tagName: "div",
       className: "title-wrapper",
