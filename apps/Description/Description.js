@@ -1,7 +1,5 @@
-import { AdvancedComponent, Component } from "../../core/Component";
+import { AdvancedComponent} from "../../core/Component";
 import { Button } from "../../components";
-import { render } from "../../core/render";
-import { Menu } from "../Menu";
 
 import "./Description.css";
 import { getMenu } from "../../store/getApps";
@@ -31,8 +29,8 @@ export class Description extends AdvancedComponent {
           tagName: "div",
           className: "title",
           textContent: "keyboard layout",
-        }),
-      ],
+        })
+      ]
     });
 
     const descrSuperTechniqueWrapper = new AdvancedComponent({
@@ -88,6 +86,7 @@ export class Description extends AdvancedComponent {
         }),
       ],
     });
+
 
     this.append(
       titleWrapper,

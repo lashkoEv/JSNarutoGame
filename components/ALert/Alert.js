@@ -14,7 +14,6 @@ export class Alert extends AdvancedComponent{
         super({
             tagName: 'div', 
             className: 'alert-wrapper', 
-            children
         });
 
         const alert = new AdvancedComponent({
@@ -26,36 +25,37 @@ export class Alert extends AdvancedComponent{
             tagName: 'div',
             className: 'title-wrapper',
             textContent: 'Login:',
-            children:[
-                new AdvancedComponent({
-                    tagName: 'div',
-                    className: 'login-errors'
-                })
-            ]
+        });
+
+        const loginErrors = new AdvancedComponent({
+            tagName: 'div',
+            className: 'login-errors',
+            textContent: 'Ur login isnt correct. Example: q@q.q'
         });
 
         const passwordTitle = new AdvancedComponent({
             tagName: 'div',
             className: 'title-wrapper',
             textContent: 'Password:',
-            children:[
-                new AdvancedComponent({
-                    tagName: 'div',
-                    className: 'password-errors'
-                })
-            ]
         });
+
+        const passwordErrors = new AdvancedComponent({
+            tagName: 'div',
+            className: 'password-errors',
+            textContent: 'Ur pass isnt correct, he should contain min 5 symbols and another features. Example: Qq12@'
+        })
 
         const alertBtn = new Button({
             textContent: 'OK',
+            className: 'alert-btn',
             events: {
                 click: (e)=>{
-                    getForm();
+                    this.remove(alert);
                 }
             }
         })
 
-        alert.append(loginTitle, passwordTitle, alertBtn)
+        alert.append(loginTitle, loginErrors, passwordTitle, passwordErrors, alertBtn);
 
         return this.append(alert);
     }

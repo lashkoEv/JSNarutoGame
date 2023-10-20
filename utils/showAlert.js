@@ -1,13 +1,25 @@
 import { getAlert } from "../store"
 
-export const showAlertWithLoginError = ()=>{
+export const showAlert = (isValidLogin, isValidPassword)=>{
     const alert = getAlert();
-    alert.children[0].children[0].textContent = 'Ur login isnt correct. Example: q@q.q';
-    return alert;
-}
 
-export const showAlertWithPassError = ()=>{
-    const alert = getAlert();
-    alert.children[0].children[1].textContent = 'Ur pass isnt correct, he should contain min 5 symbols and another features. Example: Qq12@';
+    console.log(alert);
+
+    if(!isValidLogin){
+        alert.children[0].children[1].style.display = 'block';
+        alert.children[0].children[0].style.display = 'block';
+    } else if(!isValidPassword){
+        alert.children[0].children[3].style.display = 'block';
+        alert.children[0].children[2].style.display = 'block';
+    }
+    
+    if(!isValidLogin && !isValidPassword){
+        alert.children[0].children[1].style.display = 'block';
+        alert.children[0].children[0].style.display = 'block'; 
+              
+        alert.children[0].children[3].style.display = 'block';
+        alert.children[0].children[2].style.display = 'block';
+    }
+
     return alert;
 }

@@ -4,7 +4,7 @@ import { getForm, userController, getAlert } from "../../store";
 import { render } from "../../core/render";
 
 import "./Form.css";
-import { showAlertWithLoginError, showAlertWithPassError } from "../../utils/showAlert";
+import { showAlert } from "../../utils/showAlert";
 import { append } from "../../core/append";
 
 // returns new Auth|Reg Form
@@ -50,16 +50,18 @@ export class Form extends AdvancedComponent {
             isValid = userController.authorize(userData);
           }
 
+          if(!isValid.isValidLogin || !isValid.isValidPassword || !isValid.isValidLogin && !isValid.isValidPassword){
+            append(app, showAlert(isValid.isValidLogin, isValid.isValidPassword))
+          }
+
           if (!isValid.isValidLogin) {
             loginInput.classList.add("input-error");
-            append(app, showAlertWithLoginError());  
           } else {
             loginInput.classList.remove("input-error");
           }
 
           if (!isValid.isValidPassword) {
             passwordInput.classList.add("input-error");
-            append(app, showAlertWithPassError());
           } else {
             passwordInput.classList.remove("input-error");
           }
