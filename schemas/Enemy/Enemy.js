@@ -31,7 +31,7 @@ export class Enemy {
     this.#elementImg = new AdvancedComponent({
       tagName: "img",
       className: "enemy-img",
-      src: "/enemy/gaara stand.gif",
+      src: "/enemy/Gaara/gaara stand.gif",
     });
 
     this.#element = new AdvancedComponent({
@@ -46,6 +46,7 @@ export class Enemy {
 
     this.#resizeHpBar();
     this.#resizeChakraBar();
+
   }
 
   get element() {
@@ -53,10 +54,10 @@ export class Enemy {
   }
 
   attack() {
-    this.#elementImg.src = "/enemy/gaara_attack.gif";
+    this.#elementImg.src = "/enemy/Gaara/gaara_attack.gif";
     
     setTimeout(() => {
-      this.#elementImg.src = "/enemy/gaara stand.gif";
+      this.#elementImg.src = "/enemy/Gaara/gaara stand.gif";
     }, 1000);
 
     this.#chakra += this.#CHAKRA_RECOVERY;
@@ -85,4 +86,8 @@ export class Enemy {
   }
 
   #generateName(){}
+
+  #randomEnemy(){
+    return 13;
+  }
 }
