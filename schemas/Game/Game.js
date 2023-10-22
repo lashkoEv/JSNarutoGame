@@ -25,6 +25,8 @@ export class Game {
       setTimeout(()=>{
         this.#hero.takeDamage(this.#enemy.attack());
       }, 1000);
+
+      // this.#hero.takeDamage(this.#enemy.useSkill());
     };
   }
 }

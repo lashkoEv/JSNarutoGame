@@ -9,6 +9,7 @@ export class Enemy {
   #ENEMY = this.#randomEnemy();
   #ENEMY_STAND = this.#ENEMY.stand;
   #ENEMY_ATTACK = this.#ENEMY.attack;
+  #ENEMY_SKILL = this.#ENEMY.skill;
 
   #BASE_DAMAGE = 10;
   #SKILL_DAMAGE = 30;
@@ -71,7 +72,20 @@ export class Enemy {
     return this.#BASE_DAMAGE;
   }
 
-  useSkill() {}
+  useSkill() {
+    if(this.#chakra >= this.#SKILL_CHAKRA_COST) {
+      this.#elementImg.src = this.#ENEMY_SKILL;
+    
+      setTimeout(() => {
+        this.#elementImg.src = this.#ENEMY_STAND;
+      }, 1000);
+
+      this.#chakra -= this.#SKILL_CHAKRA_COST;
+      this.#resizeChakraBar();
+
+      return this.#SKILL_DAMAGE;
+    }
+  }
 
   takeDamage(damage) {
     this.#hp -= damage;
