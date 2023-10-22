@@ -1,9 +1,15 @@
 import { Bar } from "../../components";
 import { AdvancedComponent } from "../../core/Component";
+import { random } from "../../utils/randomizer";
+import { enemiesArr } from "../../utils/enemyDataBase";
 
 import "./Enemy.css";
 
 export class Enemy {
+  #ENEMY = this.#randomEnemy();
+  #ENEMY_STAND = this.#ENEMY.stand;
+  #ENEMY_ATTACK = this.#ENEMY.attack;
+
   #BASE_DAMAGE = 10;
   #SKILL_DAMAGE = 30;
 
@@ -31,7 +37,7 @@ export class Enemy {
     this.#elementImg = new AdvancedComponent({
       tagName: "img",
       className: "enemy-img",
-      src: "/enemy/Gaara/gaara stand.gif",
+      src: this.#ENEMY_STAND
     });
 
     this.#element = new AdvancedComponent({
@@ -46,7 +52,6 @@ export class Enemy {
 
     this.#resizeHpBar();
     this.#resizeChakraBar();
-
   }
 
   get element() {
@@ -54,10 +59,10 @@ export class Enemy {
   }
 
   attack() {
-    this.#elementImg.src = "/enemy/Gaara/gaara_attack.gif";
+    this.#elementImg.src = this.#ENEMY_ATTACK;
     
     setTimeout(() => {
-      this.#elementImg.src = "/enemy/Gaara/gaara stand.gif";
+      this.#elementImg.src = this.#ENEMY_STAND;
     }, 1000);
 
     this.#chakra += this.#CHAKRA_RECOVERY;
@@ -88,6 +93,8 @@ export class Enemy {
   #generateName(){}
 
   #randomEnemy(){
-    return 13;
+    const randomNum = random(0, 2);
+
+    return enemiesArr[randomNum];
   }
 }
