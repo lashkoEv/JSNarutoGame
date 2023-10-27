@@ -39,8 +39,14 @@
     margin-bottom: 2rem;
 }
 
+.alert-btn-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
 .alert-btn{
     width: 20rem;
+    
 }
 
 .login-errors, .password-errors, .title-wrapper{

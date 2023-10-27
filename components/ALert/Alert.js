@@ -45,17 +45,33 @@ export class Alert extends AdvancedComponent{
             textContent: 'Ur pass isnt correct, he should contain min 5 symbols and another features. Example: Qq12@'
         })
 
-        const alertBtn = new Button({
-            textContent: 'OK',
-            className: 'alert-btn',
-            events: {
-                click: (e)=>{
-                    this.remove(alert);
-                }
-            }
+        const alertBtnWrapper = new AdvancedComponent({
+            tagName: 'div',
+            className: 'alert-btn-wrapper',
+            children: [
+                new Button({
+                    textContent: 'OK',
+                    className: 'alert-btn',
+                    events: {
+                        click: (e)=>{
+                            this.remove(alert);
+                        }
+                    }
+                })
+            ]
         })
 
-        alert.append(loginTitle, loginErrors, passwordTitle, passwordErrors, alertBtn);
+        // const alertBtn = new Button({
+        //     textContent: 'OK',
+        //     className: 'alert-btn',
+        //     events: {
+        //         click: (e)=>{
+        //             this.remove(alert);
+        //         }
+        //     }
+        // })
+
+        alert.append(loginTitle, loginErrors, passwordTitle, passwordErrors, alertBtnWrapper);
 
         return this.append(alert);
     }
