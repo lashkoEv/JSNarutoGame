@@ -1,4 +1,4 @@
-import { userController, getForm } from "./store";
+import { userController, getForm, getGame } from "./store";
 import { User, UserController, UserRepository } from "./schemas";
 import { ImageButton, Input } from "./components";
 import { render } from "./core/render";
@@ -12,8 +12,11 @@ import "./variables.css";
 import "./style.css";
 import { Hero } from "./schemas/Hero/Hero";
 
-getForm(true);
-console.log("Skill1@.");
+// getForm(true);
+// console.log("Skill1@.");
+
+getGame();
+
 // const bar = new Bar({});
 // render(app, bar);
 

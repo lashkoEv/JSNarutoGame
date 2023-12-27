@@ -3,6 +3,7 @@ import { Bar, ImageButton } from "../../components";
 
 import "./Scene.css";
 import { changeBackground } from "../../utils";
+import { ModalWindow } from "../../components/ModalWindow/ModalWindow";
 export class Scene {
   #scene;
   #hpBar;
@@ -11,6 +12,9 @@ export class Scene {
   #ultimate;
   #skill;
   #recovery;
+  #modalWindow;
+  #winWindow;
+  #lostWindow;
 
   constructor(hero, enemy) {
     changeBackground("/bg/pixel bg 6.gif");
@@ -63,6 +67,8 @@ export class Scene {
       className: "recovery",
       src: "/skills/recovery4.png",
     });
+
+    this.#modalWindow = new ModalWindow("Context menu", buttonsForContextMenu)
 
     this.#scene.append(
       this.#hpBar.bar,
